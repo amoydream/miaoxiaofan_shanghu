@@ -1,0 +1,13 @@
+<view class="container" xmlns:wx="http://java.sun.com/JSP/Page">
+    <view class="test_main">
+        <view class="main_item {{item.choose===1?'active':''}}" wx:for="{{channelList}}" wx:key="{{index}}"
+              bindtap="chooseChannel" data-choose="{{item.choose}}" data-index="{{index}}">{{item.realNo}}
+            <text wx:if="{{item.status!==1}}">!</text>
+        </view>
+    </view>
+    <view class="footer_btn">
+        <view>全货道测试</view>
+        <view bindtap="channelTest">货道测试</view>
+        <view>货道恢复</view>
+    </view>
+</view>

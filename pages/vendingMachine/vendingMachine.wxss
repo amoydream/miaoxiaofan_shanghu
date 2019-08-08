@@ -1,0 +1,450 @@
+/* pages/vendingMachine/vendingMachine.wxss */
+.container{
+    width: 100%;
+    height: 100%;
+    background: #f3f3f3;
+    box-sizing: border-box;
+}
+
+.head{
+    width: 750rpx;
+    height: 96rpx;
+    box-sizing: border-box;
+    text-align: center;
+    color: #333333;
+    background: white;
+    padding-top: 10rpx;
+
+}
+.head>view{
+    font-size: 28rpx;
+    line-height: 76rpx;
+    display: flex;
+    width:460rpx;
+    height:76rpx;
+    background:rgba(255,255,255,1);
+    border:2rpx solid rgba(206, 178, 103, 1);
+    border-radius:8rpx;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.head>view>view{
+    flex: 1;
+}
+
+.head>view>view.active{
+    background:#CEB267 ;
+    color: white;
+}
+
+
+.deviceStatus{
+    height: calc(100% - 100rpx);
+}
+
+/*  上部分  */
+.shopMiddle{
+    border: 1px solid #f1f1f1;
+    background: white;
+}
+.shopMiddleAll{
+    width: 600rpx;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.shopMiddleAll view{
+    padding: 20rpx 0;
+    box-sizing: border-box;
+    font-size: 30rpx;
+}
+.shopMiddleAllTab{
+    border-bottom: 3px solid #595CA1;
+    color: #595CA1
+}
+
+/*  中部分  */
+.shopAddress{
+    width: 100%;
+    height: calc(100% - 245rpx);
+    margin-top: 20rpx;
+    overflow: scroll;
+}
+.shopMessage{
+    width: 710rpx;
+    background: white;
+    margin: auto;
+    border-radius: 8rpx;
+    margin-bottom: 30rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+.shopMessage:last-child{
+    margin-bottom: 0;
+}
+
+.shopMessage .select{
+    position: absolute;
+    right: 30rpx;
+    top: 100rpx;
+}
+
+.shopMessage .select image{
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 20rpx;
+}
+
+.shopNumber{
+    overflow: hidden;
+    font-size: 30rpx;
+    box-sizing: border-box;
+    height: 64rpx;
+}
+.shopNumberLeft{
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.shopNumberLeft image{
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+}
+.shopNumberRight{
+    float: right;
+}
+.shopNumberRight view{
+    width:130rpx;
+    height:50rpx;
+    background:rgba(206,178,103,1);
+    color: white;
+    line-height: 50rpx;
+    box-sizing: border-box;
+    font-size: 26rpx;
+    text-align: center;
+}
+.shopAddressAll{
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    line-height: 64rpx;
+    align-items: center;
+}
+.shopAddressAll image{
+    width: 40rpx;
+    height: 40rpx;
+}
+.shopAddressText{
+    font-size: 28rpx;
+    line-height: 64rpx;
+    height: 64rpx;
+}
+
+.man,.goods{
+    height: 64rpx;
+    font-size: 26rpx;
+    display: flex;
+    line-height: 64rpx;
+    align-items: center;
+}
+
+.goods image{
+    width: 34rpx;
+    height: 41rpx;
+    margin-right: 10rpx;
+}
+
+.man{
+    justify-content: space-between;
+}
+
+.man>view{
+    display: flex;
+    align-items: center;
+    margin-right: 20rpx;
+}
+.man image{
+    width: 34rpx;
+    height: 41rpx;
+    margin-right: 10rpx;
+}
+
+.man .del{
+
+    margin-left: 130rpx;
+}
+
+.shopLastMore{
+    box-sizing: border-box;
+    font-size: 28rpx;
+    height: 60rpx;
+    position: relative;
+    border-top: 1rpx solid #f2f2f2;
+    line-height: 60rpx;
+}
+.shopLastMore .more{
+    font-size: 80rpx;
+    color: #595CA1;
+    position: absolute;
+    right: 20rpx;
+    width: 64rpx;
+    height:70rpx;
+}
+
+.shopLastMore .more image{
+    width: 100%;
+    height: 100%;
+}
+
+.operate{
+    position: absolute;
+    width:540rpx;
+    display: flex;
+    right: 137rpx;
+    background: #4C4C4C;
+    height: 100rpx;
+    border-radius: 8rpx;
+}
+
+.operate::after{
+    content: '';
+    display: inline-block;
+    width: 0rpx;
+    height: 0rpx;
+    border-bottom: 20rpx solid white;
+    border-top: 20rpx solid white;
+    border-left: 30rpx solid #4C4C4C;
+    position: absolute;
+    right: -30rpx;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.operate>view{
+    flex: 1;
+    text-align: center;
+    font-size:20rpx;
+    color:rgba(255,255,255,1);
+    padding-top: 10rpx;
+}
+
+.operate>view image{
+    width: 41rpx;
+    height: 41rpx;
+    display:block;
+    margin: 0 auto;
+}
+
+.operate>view .text{
+    line-height: 50rpx;
+}
+
+
+
+/*   下面定位  */
+.shopAdd{
+    width: 100%;
+    height: 88rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: white;
+    box-sizing: border-box;
+    line-height: 88rpx;
+    display: flex;
+    align-items:center;
+    padding: 0 30rpx;
+}
+
+.shopAdd .select{
+    flex: 1;
+    font-size:28rpx;
+    color:rgba(102,102,102,1);
+    display: flex;
+    align-items:center;
+}
+
+.shopAdd .select image{
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 20rpx;
+}
+
+.shopAdd .btn{
+    flex: 1;
+    width: 380rpx;
+    height: 70rpx;
+    display: flex;
+    font-size:28rpx;
+    color:rgba(255,255,255,1);
+    line-height: 70rpx;
+    text-align: center;
+}
+
+.shopAdd .btn>view:first-child{
+    flex: 1;
+    background:#CEB267 ;
+    border-radius:35rpx 0 0 35rpx;
+}
+
+.shopAdd .btn>view:last-child{
+    flex: 1;
+    background:#595CA1 ;
+    border-radius: 35rpx;
+}
+
+
+
+.affirm_add{
+    position: fixed;
+    width: 30%;
+    font-size: 28rpx;
+    right:50rpx;
+    bottom: 550rpx;
+}
+
+.mainBottom_refresh,.mainBottom_loadMore{
+    text-align: center;
+    line-height: 60rpx;
+}
+
+.without{
+    padding-top: 100rpx;
+    text-align: center;
+    font-size:30rpx;
+    color:rgba(102,102,102,1);
+}
+
+.without image{
+    width: 260rpx;
+    height: 270rpx;
+}
+/*巡货员*/
+.part{
+    height: calc(100% - 100rpx);
+}
+.part_head{
+    background: #595CA1;
+    box-sizing: border-box;
+    width: 100%;
+    height: 88rpx;
+    position: fixed;
+    bottom: 0;
+}
+.part_head navigator{
+    color: white;
+    font-size:30rpx;
+    text-align: center;
+    line-height: 88rpx;
+    font-family:MicrosoftYaHei;
+}
+.part_main{
+    padding: 20rpx;
+    box-sizing: border-box;
+    font-size: 30rpx;
+    height: calc(100% - 80rpx);
+}
+.part_main .main_item{
+    width: 710rpx;
+    background: white;
+    font-size:28rpx;
+    font-family:MicrosoftYaHei;
+    color:rgba(51,51,51,1);
+    padding:0 30rpx;
+    box-sizing: border-box;
+    border-radius: 14rpx;
+    margin-bottom: 24rpx;
+}
+
+.part_main .main_item .item_name,.part_main .main_item .item_phone{
+    position: relative;
+    height: 80rpx;
+    padding-top: 30rpx;
+    box-sizing: border-box;
+}
+
+.part_main .main_item .item_name image{
+    width: 34rpx;
+    height: 41rpx;
+    vertical-align: middle;
+}
+
+.part_main .main_item .item_phone image{
+    width: 34rpx;
+    height: 41rpx;
+    vertical-align: middle;
+}
+
+
+.part_main .main_item .addDevice{
+    color:#CEB267;
+    position: absolute;
+    right:0rpx;
+    top: 0rpx;
+}
+
+.item_bottom{
+    border-top: 1rpx solid #f2f2f2;
+    height: 90rpx;
+    width: 660rpx;
+    box-sizing: border-box;
+    padding-top: 10rpx;
+}
+
+.item_bottom view{
+    float: right;
+    margin-left: 20rpx;
+    width:150rpx;
+    height:58rpx;
+    border:2rpx solid rgba(214,214,214,1);
+    border-radius:29rpx;
+    text-align: center;
+    line-height: 58rpx;
+    color:#666666;
+}
+
+.item_bottom view:nth-child(1){
+    border:2rpx solid rgba(245,65,65,1);
+    color: #F54141;
+}
+
+
+.mainBottom_refresh,.mainBottom_loadMore{
+    text-align: center;
+    line-height: 60rpx;
+}
+
+.deviceList{
+    width: 100%;
+    height: 500rpx;
+    background: #ffffff;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #cccccc;
+}
+.deviceList .List_item{
+    padding: 20rpx;
+    box-sizing: border-box;
+    font-size: 32rpx;
+    width: 75%;
+}
+.List_item >view{
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    background: #cccccc;
+    float: right;
+}
+.List_item >view.choose{
+    background: #457DFA;
+}
+.deviceList button{
+    position: fixed;
+    bottom: 417rpx;
+    right: 30rpx;
+    font-size: 30rpx
+
+}

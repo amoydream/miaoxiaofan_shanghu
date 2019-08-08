@@ -1,0 +1,64 @@
+<view class="container">
+    <view class="title">商品信息（必填）</view>
+    <view class="list-img">
+        <image src="{{goodsImg}}"  bindtap="choose"></image>
+    </view>
+    <view class="list clearfloat">
+        <text>商品名称:</text>
+        <input type="text" placeholder="" bindinput="nameInput" value="{{name}}"/>
+    </view>
+    <view class="list clearfloat">
+        <text>商品分类:</text>
+        <picker mode="selector" range="{{className}}" value="{{index}}" bindchange="bindChange3">
+            <text>{{className[classIndex]}}</text>
+        </picker>
+    </view>
+    <view class="list clearfloat">
+        <text>商品售价:</text>
+        <input type="text" placeholder="" bindinput="discountInput" value="{{discount}}"/>
+    </view>
+    <view class="list clearfloat">
+        <text>成本价:</text>
+        <input type="text" placeholder="" bindinput="costInput" value="{{cost}}"/>
+    </view>
+    <view class="list clearfloat">
+        <text>商品单位:</text>
+        <input type="text" placeholder="如：瓶、包、盒" bindinput="unitInput" value="{{unit}}"/>
+    </view>
+    <view class="title">商品详情</view>
+    <view class="list clearfloat">
+        <text>商品编号:</text>
+        <input type="text" placeholder="" bindinput="noInput" value="{{no}}"/>
+    </view>
+    <view class="list clearfloat">
+        <text>商品品牌:</text>
+        <input type="text" placeholder="" bindinput="brandInput" value="{{brand}}"/>
+    </view>
+    <view class="list clearfloat">
+        <text>商品型号:</text>
+        <input type="text" placeholder="" bindinput="modelInput" value="{{model}}"/>
+    </view>
+    <view class="list clearfloat">
+        <text>建议售价:</text>
+        <input type="text" placeholder="" bindinput="priceInput" value="{{price}}"/>
+    </view>
+    <view class="title">其他</view>
+    <view class="list clearfloat">
+        <text>商品标签:</text>
+        <picker mode="selector" range="{{labelName}}" value="{{index}}" bindchange="bindChange2">
+            <text>{{labelName[labelIndex]}}</text>
+        </picker>
+    </view>
+    <view class="list clearfloat">
+        <text>商品状态:</text>
+        <picker mode="selector" range="{{statusName}}" value="{{index}}" bindchange="bindChange1">
+            <text>{{statusName[statusIndex]}}</text>
+        </picker>
+    </view>
+    <view class="list clearfloat" style="margin-bottom: 88rpx">
+        <text>商品备注:</text>
+        <input type="text" placeholder="" bindinput="remarkInput" value="{{remark}}"/>
+    </view>
+
+    <view class="confirm" bindtap="confirm">确定</view>
+</view>

@@ -1,0 +1,20 @@
+<view catchtap="container">
+    <view class="head">
+        <image src="{{headImg}}"></image>
+        <view>
+            <text class="name">{{userName}}</text>
+            <text class="phone">{{phone}}</text>
+        </view>
+    </view>
+
+    <view class="item" wx:for="{{device}}" wx:key="{{index}}">
+        <view>
+            <image src="../../../images/bianhao.png"></image>
+            <text>{{item.no}}</text>
+        </view>
+        <view>
+            <image src="../../../images/address.png"></image>
+            <text>{{item.address}}</text>
+        </view>
+    </view>
+</view>

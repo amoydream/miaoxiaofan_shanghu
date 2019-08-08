@@ -1,0 +1,147 @@
+page{
+    background: #f2f2f2;
+}
+.container{
+    height: 100%;
+    padding-top: 30rpx;
+    box-sizing: border-box;
+}
+.head{
+    height: 250rpx;
+    background: white;
+    width: 690rpx;
+    margin: 0 auto;
+    color: #333333;
+    box-sizing: border-box;
+    padding: 30rpx;
+    font-size:36rpx;
+    color:rgba(51,51,51,1);
+    border-radius:8rpx;
+}
+
+.head .title{
+    font-size:32rpx;
+    color:rgba(51,51,51,1);
+}
+.head .count{
+    font-size:26rpx;
+    color:rgba(51,51,51,1);
+    line-height: 50rpx;
+}
+
+.head  .balance{
+    font-size:26rpx;
+    color:rgba(153,153,153,1);
+    line-height: 50rpx;
+}
+
+.head  .balance image{
+    width: 42rpx;
+    height: 42rpx;
+    vertical-align: middle;
+}
+
+.head  .balance{
+    color: #CEB267;
+}
+
+.myBankCard{
+    position: fixed;
+    right: 60rpx;
+    top: 30rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size:26rpx;
+    color:rgba(206,178,103,1);
+}
+
+.payType{
+    font-size: 30rpx;
+    padding: 20rpx;
+    background: white;
+    width: 690rpx;
+    margin: 20rpx auto;
+    box-sizing: border-box;
+    border-radius: 8rpx;
+}
+
+.payType .payTitle{
+    margin-bottom: 10rpx;
+    display: flex;
+    align-items: center;
+}
+
+.payType .payTitle image{
+    width: 41rpx;
+    height: 33rpx;
+    margin-right: 20rpx;
+}
+
+.payType .payBottom{
+    border-bottom: 1rpx solid #f2f2f2 ;
+    line-height: 80rpx;
+}
+
+.payType .can{
+    float: left;
+}
+.payType .sales{
+    float: right;
+    margin-left: 20rpx;
+}
+.payType .list{
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.payType .list image{
+    width: 20rpx;
+    height: 34rpx;
+    float: right;
+    margin-right: 30rpx;
+    margin-top: 25rpx;
+}
+
+
+.fail{
+    background: #f8f8f8;
+    height: 300rpx;
+    width: 100%;
+    font-size: 30rpx;
+    overflow: scroll;
+}
+.fail text{
+    padding-left: 20rpx;
+    line-height: 60rpx;
+}
+.fail_list{
+    height: 120rpx;
+    line-height: 60rpx;
+    padding: 0 20rpx;
+}
+.fail_list .bottom{
+    display: flex;
+}
+
+.fail_list .bottom>view{
+    flex: 1;
+}
+.fail_list .again{
+    background: #cccccc;
+    border-radius: 20rpx;
+    text-align: center;
+}
+
+modal{
+    height: 400rpx;
+}
+
+modal input{
+    border: 1px solid #e8e8e8;
+    text-align:center ;
+}
+.modal_sales{
+    line-height: 50rpx;
+    margin-top: 20rpx;
+    font-size: 30rpx;
+}

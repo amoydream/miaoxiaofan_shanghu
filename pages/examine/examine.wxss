@@ -1,0 +1,90 @@
+page{
+    background: #F2F2F2;
+}
+
+.container{
+    height: 100%;
+}
+
+.head{
+    height: 100rpx;
+    background: white;
+    padding-top: 12rpx;
+    box-sizing: border-box;
+}
+
+.head .head-item{
+    width: 460rpx;
+    height: 76rpx;
+    border:2rpx solid rgba(206, 178, 103, 1);
+    border-radius: 8rpx;
+    font-size:28rpx;
+    color:rgba(51,51,51,1);
+    line-height: 76rpx;
+    text-align: center;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.head .head-item>view{
+    flex: 1;
+}
+
+.head .head-item>view.active{
+    background:#CEB267;
+    color: white;
+}
+
+.s-main{
+    background: white;
+    width: 690rpx;
+    margin:20rpx auto;
+    font-size: 30rpx;
+    border-radius: 8rpx;
+    height: calc(100% - 140rpx);
+}
+
+.main{
+    background: white;
+    width: 690rpx;
+    margin:20rpx auto;
+    font-size: 30rpx;
+    border-radius: 8rpx;
+    height: calc(100% - 140rpx);
+    overflow: scroll;
+}
+
+.item{
+    display: flex;
+    line-height: 80rpx;
+    border-bottom: 1rpx solid #f2f2f2;
+    box-sizing: border-box;
+    position: relative;
+}
+
+ .item .day::after{
+    content: '';
+    display: block;
+    width:8rpx;
+    height:34rpx;
+    background:rgba(89,92,161,1);
+    position: absolute;
+    top: 50%;
+    left: 20rpx;
+    transform: translateY(-50%);
+}
+
+ .date{
+    width: 160rpx;
+    text-align: center;
+}
+
+ .item .income{
+    width: 265rpx;
+    text-align: center;
+}
+
+ .item .income.feature{
+    color:rgba(92,148,236,1);
+}

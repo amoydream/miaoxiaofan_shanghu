@@ -1,0 +1,17 @@
+/**app.wxss**/
+::-webkit-scrollbar {
+    /*隐藏滚轮*/
+    display: none;
+}
+page {
+    height: 100%; /*生效*/
+}
+
+.clearfloat:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}

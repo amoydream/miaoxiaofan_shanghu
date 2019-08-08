@@ -1,0 +1,95 @@
+<view class="container" bindtap="areaHide">
+    <view class="basic-info">
+        <view class="title">运营基础信息</view>
+        <view class="item">
+            <text>设备编号</text>
+            <input type="text" value="{{deviceInfo.no}}" title="" disabled/>
+        </view>
+        <view class="item">
+            <text>设备名称</text>
+            <input type="text" value="{{deviceInfo.nickName}}" title="" disabled/>
+        </view>
+        <view class="item">
+            <text>设备类型</text>
+            <input type="text" value="{{name}}" title="" disabled/>
+        </view>
+        <view class="title">位置信息</view>
+        <view class="item">
+            <text>位置区域</text>
+            <view class="position">
+                <view class="province" catchtap="provinceShow">
+                    {{province}}
+                    <view class="box" hidden="{{provinceShow}}">
+                        <view class="box-item" wx:for="{{provinceList}}" wx:key="{{index}}" data-no="{{item.no}}"
+                              data-name="{{item.name}}" catchtap="chooseProvince">{{item.name}}</view>
+                    </view>
+                </view>
+                <view class="city" catchtap="cityShow">
+                    {{city}}
+                    <view class="box" hidden="{{cityShow}}">
+                        <view class="box-item" wx:for="{{cityList}}" wx:key="{{index}}" data-no="{{item.no}}"
+                              data-name="{{item.name}}" catchtap="chooseCity">{{item.name}}</view>
+                    </view>
+                </view>
+                <view class="county" catchtap="countyShow">
+                    {{county}}
+                    <view class="box" hidden="{{countyShow}}">
+                        <view class="box-item" wx:for="{{countyList}}" wx:key="{{index}}" data-no="{{item.no}}"
+                              data-name="{{item.name}}" catchtap="chooseCounty">{{item.name}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="item" bindtap="map">
+            <text>详细地址</text>
+            <input type="text" title="" value="{{district}}"/>
+            <image src="../../../images/right.png"></image>
+        </view>
+        <view class="title">运营信息</view>
+        <view class="item">
+            <text>补货员</text>
+            <input type="text" value="{{deviceInfo.inspectorName}}"  title="" disabled/>
+
+        </view>
+        <view class="item">
+            <text>运营时间</text>
+            <picker mode="date" value="{{time}}"  bindchange="bindSendTimeChange">
+                <view class="picker">{{operationTime}}</view>
+            </picker>
+            <image src="../../../images/right.png"></image>
+        </view>
+        <view class="item" data-url="{{deviceInfo.unionCode}}" catchtap="tapHandler">
+            <text>设备二维码</text>
+            <input type="text" title="" disabled/>
+            <image src="../../../images/right.png"></image>
+        </view>
+
+
+        <view class="btn" bindtap="save">保存</view>
+    </view>
+
+    <!--二维码-->
+    <modal hidden="{{modalShow}}" title="查看二维码" confirm-text="确认" cancel-text="" bindcancel="cancel"
+           bindconfirm="confirm" no-cancel="true">
+        <image src="{{qRImg}}" class="qcrImg"></image>
+
+    </modal>
+
+    <view class="map" bindtap="allHide" hidden="{{map}}">
+        <!--绑定点击事件-->
+        <view class="search">
+            <input type="text" value="{{address}}" bindinput="think" bindconfirm="nearby_search" title=""/>
+            <view class="think" hidden="{{thinkShow}}">
+                <view class="item" wx:for="{{think}}" wx:key="{{index}}" bindtap="choose"
+                      data-location="{{item.location}}" data-title="{{item.title}}"
+                      data-all="{{item}}">{{item.title}}</view>
+            </view>
+        </view>
+
+        <!--地图容器-->
+        <map id="myMap" markers="{{markers}}" style="width:100%;height:800rpx;" longitude="{{longitude}}"
+             latitude="{{latitude}}" scale='16' hidden="{{mapShow}}">
+        </map>
+        <view class="btn" bindtap="affirm">确认</view>
+    </view>
+</view>

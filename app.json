@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/vendingMachine/moreTest/moreTest",
+    "pages/vendingMachine/test/test",
+    "pages/login/login",
+    "pages/order/order",
+    "pages/vendingMachine/vendingMachine",
+    "pages/vendingMachine/tradition/tradition",
+    "pages/vendingMachine/RFIDDetails/RFIDDetails",
+    "pages/inventory/inventory",
+    "pages/inventory/tradition/tradition",
+    "pages/inventory/RFIDDetails/RFIDDetails",
+    "pages/examine/examine",
+    "pages/data/data-devices/data-devices",
+    "pages/shopAdministrator/lead/lead",
+    "pages/vendingMachine/vendingChild/vendingChild",
+    "pages/vendingMachine/deploy/deploy",
+    "pages/vendingMachine/device/device",
+    "pages/vendingMachine/manList/manList",
+    "pages/personage/personage",
+    "pages/set/set",
+    "pages/password/password",
+    "pages/set/money/money",
+    "pages/shopAdministrator/shopAdministrator",
+    "pages/shopAdministrator/addGoods/addGoods",
+    "pages/vendingMachine/editInfo/editInfo",
+    "pages/vendingMachine/inventory/inventory",
+    "pages/order/orderDetails/orderDetails",
+    "pages/analyze/analyze",
+    "pages/set/bankCard/bankCard",
+    "pages/set/money/record/record",
+    "pages/operation/operation",
+    "pages/shopAdministrator/shopListOne/shopListOne"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#595CA1",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

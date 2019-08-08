@@ -1,0 +1,21 @@
+<view class="container">
+    <view class="info">
+        <text>欢迎使用</text>
+    </view>
+    <navigator class="account" url="./money/money">
+        <image src="../../images/money.png" class="money"></image>
+        我的钱包
+        <image src="../../images/right.png" class="right"></image>
+    </navigator>
+    <navigator class="account" url="../personage/personage">
+        <image src="../../images/set.png" class="set"></image>
+        商户设置
+        <image src="../../images/right.png" class="right"></image>
+    </navigator>
+    <navigator class="account" url="../password/password">
+        <image src="../../images/pasword.png" class="password"></image>
+        修改密码
+        <image src="../../images/right.png" class="right"></image>
+    </navigator>
+    <view class="capacity"  bindtap="quit">退出登录</view>
+</view>

@@ -1,0 +1,20 @@
+<view class="container">
+    <scroll-view class='mainBottom' scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="refesh">
+        <view class="mainBottom_refresh" hidden="{{refresh}}">刷新中...</view>
+        <view class="record_list" wx:for="{{record}}" wx:key="index">
+            <view>
+                <view>提现时间：{{item.createTime}}</view>
+                <view>提现金额：{{item.realMoney}}</view>
+            </view>
+            <view>
+                <view>提现类型：{{item.thirdType===1?'微信':'支付宝'}}</view>
+                <view>账户类型：{{item.accountType===1?'商家账户':'银行卡'}}</view>
+            </view>
+            <view>
+                <view>提现人名称：{{item.name}}</view>
+                <view>本次总扣除金额：{{item.money}}</view>
+            </view>
+        </view>
+        <view class="mainBottom_loadMore" hidden="{{load}}">{{drop}}</view>
+    </scroll-view>
+</view>

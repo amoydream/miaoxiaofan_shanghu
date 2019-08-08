@@ -1,0 +1,54 @@
+<view class="container">
+    <view class="head">
+        <view class="">
+            <text class="title">账户总览</text>
+            <view class="count">总资产</view>
+            ￥{{cash}}
+        </view>
+        <view class="balance">
+            <image src="../../../images/tixian.png"></image>
+            可提现金额
+            <text>￥{{balance}}</text>
+        </view>
+        <navigator class="myBankCard" url="../bankCard/bankCard">我的银行卡</navigator>
+    </view>
+
+    <view class="payType clearfloat" wx:for="{{payType}}" wx:key="index">
+        <view class="payTitle"><image src="{{item.type===1?'../../../images/wx.png':'../../../images/zfb.png'}}"></image><text>{{item.type===1?'微信':'支付宝'}}</text></view>
+        <view class="payBottom clearfloat">
+            <view class="can">可提现金额：{{item.balance}}(元)</view>
+            <view class="sales">账户余额：{{item.cash}}(元)</view>
+        </view>
+        <view class="deposit list" bindtap="record" data-type="{{item.type}}">
+            <text>提现记录</text>
+            <image src="../../../images/right.png"></image>
+        </view>
+        <view class="withdraw list" bindtap="action" data-type="{{item.type}}" data-account="1">
+            <text>提现到账户</text>
+            <image src="../../../images/right.png"></image>
+        </view>
+        <view class="withdraw list" bindtap="action" data-type="{{item.type}}" data-account="2"
+              hidden="{{item.type===1?false:true}}">
+            <text>提现到银行卡</text>
+            <image src="../../../images/right.png"></image>
+        </view>
+    </view>
+    <!--提现失败操作-->
+    <view class="fail" hidden="{{failShow}}">
+        <text>提现失败</text>
+        <view class="fail_list" wx:for="{{failList}}" wx:key="index">
+            <view>时间:{{item.createTime}}</view>
+            <view class="bottom">
+                <view>提现金额:{{item.realMoney}}</view>
+                <view class="again" bindtap="again" data-id="{{item.id}}">重试</view>
+            </view>
+
+        </view>
+    </view>
+
+    <modal hidden="{{hide}}" title="提现金额" confirm-text="确认" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm"
+           no-cancel="{{nocancel}}">
+        <input type="text" placeholder="" bindblur="calculation" bindinput="forward"/>
+        <view class="modal_sales" hidden="{{salesShow}}">需要扣除总费用{{total}}(运营平台扣除{{feeAdmin}}，第三方扣除{{feePay}})</view>
+    </modal>
+</view>

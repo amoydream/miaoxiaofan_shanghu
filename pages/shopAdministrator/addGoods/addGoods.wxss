@@ -1,0 +1,62 @@
+.container{
+  
+}
+
+.title{
+    height: 60rpx;
+    line-height: 60rpx;
+    background: #f2f2f2;
+    font-size:24rpx;
+    color:rgba(102,102,102,1);
+    padding-left: 30rpx;
+}
+
+.title text{
+    color: #F54141;
+}
+
+.container .list{
+    font-size: 28rpx;
+    border-bottom: 1rpx solid #f2f2f2;
+    width: 690rpx;
+    height: 80rpx;
+    margin: 0 auto;
+    line-height: 80rpx;
+    color: #333333;
+}
+
+.list-img{
+    text-align: center;
+    padding-top: 20rpx;
+}
+
+.list-img image{
+    border: 1px solid #cccccc;
+    width: 160rpx;
+    height: 160rpx;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.container .list input{
+    display: inline-block;
+    float: right;
+    width: 75%;
+    height: 80rpx;
+}
+.container .list picker{
+    border-bottom: 1rpx solid #f2f2f2;
+    width:75%;
+    float: right;
+}
+.confirm{
+    width:750rpx;
+    height:87rpx;
+    background:rgba(89,92,161,1);
+    font-size:30rpx;
+    color:rgba(255,255,255,1);
+    position: fixed;
+    bottom: 0;
+    line-height: 87rpx;
+    text-align: center;
+}

@@ -1,0 +1,104 @@
+<view class="container">
+    <view class="head clearfloat">
+        <view class="head-item">
+            <image class="head-left" src="../../images/2.png"></image>
+            <view class="head-right">
+                <text>在线设备</text>
+                <view class="number">
+                    <text>{{info.device.onlineNum==null?0:info.device.onlineNum}}</text>
+                    台
+                </view>
+            </view>
+        </view>
+        <view class="head-item">
+            <image class="head-left" src="../../images/1.png"></image>
+            <view class="head-right">
+                <text>机器故障</text>
+                <view class="number">
+                    <text>{{info.device.brokenNum==null?0:info.device.brokenNum}}</text>
+                    台
+                </view>
+            </view>
+        </view>
+        <view class="head-item">
+            <image class="head-left" src="../../images/4.png"></image>
+            <view class="head-right">
+                <text>离线状态</text>
+                <view class="number">
+                    <text>{{info.device.loseNum==null?0:info.device.loseNum}}</text>
+                    台
+                </view>
+            </view>
+        </view>
+        <view class="head-item">
+            <image class="head-left" src="../../images/3.png"></image>
+            <view class="head-right">
+                <text>建议补货</text>
+                <view class="number">
+                    <text>{{info.device.needAddNum==null?0:info.device.needAddNum}}</text>
+                    台
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+    <view class="operation_main">
+        <view class="title">收入（当日）</view>
+        <view class="main_ul">
+            <view class="main_ul_li">
+                <view>营收总额</view>
+                <text>{{info.money.realPrice}}</text>
+            </view>
+            <view class="main_ul_li">
+                <view>销售收入</view>
+                <text>{{info.money.sales}}</text>
+            </view>
+            <view class="main_ul_li">
+                <view>预估利润</view>
+                <text>{{info.money.gain}}</text>
+            </view>
+            <view class="main_ul_li">
+                <view>微信收入</view>
+                <text>0</text>
+            </view>
+            <view class="main_ul_li">
+                <view>支付宝收入</view>
+                <text>0</text>
+            </view>
+            <view class="main_ul_li">
+                <view>在线退款</view>
+                <text>{{info.money.refundPrice}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="operation_main">
+        <view class="title">订单（当日）</view>
+        <view class="main_ul">
+            <view class="main_ul_li">
+                <view>总订单</view>
+                <text>{{info.order.allNum}}</text>
+            </view>
+            <view class="main_ul_li">
+                <view>销售订单</view>
+                <text>{{info.order.soleNum}}</text>
+            </view>
+            <view class="main_ul_li">
+                <view>其他订单</view>
+                <text>{{info.order.luckDrawNum}}</text>
+            </view>
+            <view class="main_ul_li">
+                <view>出货成功</view>
+                <text>{{info.order.outSuccessNum}}</text>
+            </view>
+            <view class="main_ul_li">
+                <view>出货失败</view>
+                <text>{{info.order.outFailNum}}</text>
+            </view>
+            <view class="main_ul_li">
+                <view>存货</view>
+                <text>{{info.order.stockNum}}</text>
+            </view>
+        </view>
+    </view>
+</view>

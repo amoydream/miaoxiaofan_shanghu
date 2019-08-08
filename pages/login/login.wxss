@@ -1,0 +1,115 @@
+
+.container{
+
+}
+.head{
+    width: 100%;
+    height: 436rpx;
+    background:#595CA1 ;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 60rpx;
+    margin-bottom: 30rpx;
+    overflow: hidden;
+}
+
+.head::after{
+    content:'';
+    display: block;
+    position: absolute;
+    width: 930rpx;
+    height:750rpx;
+    background: white;
+    border-radius: 50%;
+    left: -90rpx;
+    top: 280rpx;
+}
+
+.head image{
+    width: 180rpx;
+    height: 180rpx;
+}
+
+
+.itemView{
+    width: 60%;
+    height: 100rpx;
+    margin: 0 auto;
+    font-size: 24rpx;
+    position: relative;
+}
+
+.itemView .user{
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    top: 34%;
+    left: -30rpx;
+    transform: translateY(-50%);
+}
+
+.itemView .password{
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    top: 34%;
+    left: -32rpx;
+    transform: translateY(-50%);
+}
+
+.itemView input{
+    width: 100%;
+    height: 60rpx;
+    border-bottom: 1px solid #ccc;
+    padding-left: 10px;
+}
+.viewLogin{
+    margin: 30rpx auto;
+    width: 40%;
+}
+.viewLogin .loginBtn{
+    font-size: 30rpx;
+    background: #DDDDDD;
+    color: white;
+    width:300rpx;
+    height:80rpx;
+    background:rgba(89,92,161,1);
+    border-radius:40rpx;
+    text-align: center;
+    line-height: 80rpx;
+}
+
+.code{
+    position: relative;
+    height: 100rpx;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.code .user{
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    top: 34%;
+    left: 40rpx;
+    transform: translateY(-50%);
+}
+
+.code input{
+    position: absolute;
+    left: 80rpx;
+    font-size: 24rpx;
+    height: 60rpx;
+    border-bottom: 1px solid #ccc;
+    padding-left: 10px;
+    width: 191rpx;
+}
+.code canvas{
+    position: absolute;
+    top: 0;
+    right: 10rpx;
+    width: 200rpx;
+    height: 100rpx;
+}

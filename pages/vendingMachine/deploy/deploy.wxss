@@ -1,0 +1,174 @@
+page{
+    background: #f2f2f2;
+}
+.container{
+    height: 100%;
+}
+.title{
+    padding-left: 30rpx;
+    line-height: 60rpx;
+    font-size:24rpx;
+    color:rgba(102,102,102,1);
+}
+
+.basic-info .item{
+    height: 80rpx;
+    background: white;
+    font-size:28rpx;
+    color:rgba(51,51,51,1);
+    line-height: 80rpx;
+    padding-left: 30rpx;
+    border-bottom: 1rpx solid #f2f2f2;
+}
+
+.item text{
+    display: inline-block;
+    width: 160rpx;
+    float: left;
+}
+
+.item input{
+    /*border: 1px solid #000;*/
+    float: left;
+    height: 80rpx;
+    box-sizing: border-box;
+    width: 500rpx;
+}
+
+.item .picker{
+    float: left;
+    height: 80rpx;
+    box-sizing: border-box;
+    width: 500rpx;
+    position: relative;
+}
+
+
+.picker .text{
+    float: left;
+    padding-right: 10rpx;
+}
+
+.picker-box{
+    position: absolute;
+    border: 1rpx solid #f2f2f2;
+    width: 500rpx;
+    height: 300rpx;
+    background: white;
+    top: 80rpx;
+    overflow: scroll;
+}
+
+.picker-box .box-item{
+    line-height: 64rpx;
+    text-align: center;
+    border-bottom: 1rpx solid #f2f2f2;
+}
+
+.item image{
+    width: 30rpx;
+    height: 34rpx;
+    vertical-align: middle;
+}
+
+.btn{
+    width: 100%;
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    font-size:32rpx;
+    color:rgba(255,255,255,1);
+    background:rgba(75,133,243,1);
+    position: fixed;
+    bottom: 0;
+}
+
+
+.item .position{
+    float: left;
+    height: 80rpx;
+    box-sizing: border-box;
+    width: 520rpx;
+    display: flex;
+    position: relative;
+}
+
+.item .position>view{
+    flex: 1;
+    border-left: 1rpx solid #f2f2f2;
+    text-align: center;
+}
+
+.position .box{
+    position: absolute;
+    left: 0;
+    top: 80rpx;
+    border: 1rpx solid #f2f2f2;
+    width: 520rpx;
+    height: 300rpx;
+    box-sizing: border-box;
+    background: white;
+    overflow: scroll;
+    z-index: 999;
+}
+
+.position .box .box-item{
+    text-align: center;
+    line-height: 64rpx;
+}
+
+
+/*地图信息*/
+.map{
+    width: 100%;
+    height: 100%;
+    background: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+
+.map .search{
+    height: 100rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.map .search .think{
+    height: 400rpx;
+    width: 706rpx;
+    background: white;
+    border: 1rpx solid #f2f2f2;
+    position: absolute;
+    top: 82rpx;
+    overflow: scroll;
+}
+
+.map .search .think .item{
+    border-bottom: 1rpx solid #f2f2f2;
+    line-height: 64rpx;
+    font-size: 28rpx;
+    padding-left: 20rpx;
+}
+
+.map input{
+    font-size: 30rpx;
+    height: 60rpx;
+    border: 1rpx solid #f2f2f2;
+    margin-bottom: 20rpx;
+    padding-left: 20rpx;
+}
+
+.map button{
+    margin: 30rpx auto;
+    width: 90%;
+}
+
+.qcrImg{
+    width: 300rpx;
+    height: 300rpx;
+    display: block;
+    margin: 0 auto;
+}

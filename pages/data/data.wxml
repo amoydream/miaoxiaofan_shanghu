@@ -1,0 +1,146 @@
+<view class="container">
+    <view class="data-head">
+        <view class="nav">
+            <view class="{{currentTabsIndex==index?'active':''}}" wx:for="{{class}}" wx:key="*this"
+                  data-index="{{index}}" bindtap='selected'>{{item}}</view>
+        </view>
+    </view>
+    <view class="time_main">
+        <view class="{{typeIndex==index?'active':''}}" wx:for="{{day}}" wx:key="index" bindtap="chooseTime"
+              data-type="{{item.type}}" data-index="{{index}}">{{item.name}}</view>
+    </view>
+
+    <!--收入统计-->
+    <view class="market" wx:if="{{currentTabsIndex===0}}">
+        <view class="today">
+            <view>
+                <text class="specific">￥{{income.realPrice==null?0:income.realPrice}}</text>
+                <view class="direction">收入总额</view>
+            </view>
+            <view>
+                <text class="specific">￥{{income.salePrice==null?0:income.salePrice}}</text>
+                <view class="direction">营业收入</view>
+            </view>
+            <view>
+                <text class="specific">￥{{income.costGetPrice==null?0:income.costGetPrice}}</text>
+                <view class="direction">成本利润</view>
+            </view>
+            <view>
+                <text class="specific">￥{{income.saleGetPrice==null?0:income.saleGetPrice}}</text>
+                <view class="direction">售价利润</view>
+            </view>
+            <view>
+                <text class="specific">0</text>
+                <view class="direction">订单总额</view>
+            </view>
+            <view>
+                <text class="specific">0</text>
+                <view class="direction">销售订单</view>
+            </view>
+            <view>
+                <text class="specific">0</text>
+                <view class="direction">异常订单</view>
+            </view>
+            <view>
+                <text class="specific">0</text>
+                <view class="direction">其他订单</view>
+            </view>
+        </view>
+        <!--销售统计-->
+        <view class="more-title">收入列表</view>
+        <scroll-view scroll-y="true" bindscrolltolower="loadMoreIncomeList" style="height: calc(100% - 350rpx)">
+            <view class="income-list">
+                <view class="tr">
+                    <view class="th">日期</view>
+                    <view class="th">总收入</view>
+                    <view class="th">营业收入</view>
+                    <view class="th">退款</view>
+                    <view class="th">预估利润</view>
+                </view>
+                <view class="tr" wx:for="{{incomeList}}" wx:key="{{index}}">
+                    <view class="td">{{item.dayTime}}</view>
+                    <view class="td">{{item.realPrice}}</view>
+                    <view class="td">{{item.salePrice}}</view>
+                    <view class="td">0</view>
+                    <view class="td">{{item.incomePrice}}</view>
+                </view>
+            </view>
+            <view class="income_foot" hidden="">到底了</view>
+        </scroll-view>
+    </view>
+    <!--商品统计-->
+    <view class="goods" wx:if="{{currentTabsIndex===1}}">
+        <view class="goods_item">
+            <view class="goods_item_title">商品分类销售比</view>
+            <view class="goods_box one">
+                <ec-canvas id="mychart-multi-pie" canvas-id="mychart-multi-pie" ec="{{ecBar}}" width="100"></ec-canvas>
+            </view>
+        </view>
+        <view class="goods_item">
+            <view class="goods_item_title">商品热销Top5</view>
+            <view class="goods_box two">
+                <view class="li" wx:for="{{hotTop}}" wx:key="{{index}}">
+                    <text>{{item.goodName}}</text>
+                    <view class="progress">
+                        <view class="have" style="background: #54B7F5;width:{{item.width}}%"></view>
+                        <view class="none">{{item.countNum}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="goods_item">
+            <view class="goods_item_title">商品滞销Top5</view>
+            <view class="goods_box two">
+                <view class="li" wx:for="{{stopTop}}" wx:key="{{index}}">
+                    <text>{{item.goodName}}</text>
+                    <view class="progress">
+                        <view class="have" style="background: #F55454;width:{{item.width}}%"></view>
+                        <view class="none">{{item.countNum}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--设备统计-->
+    <view class="device" wx:if="{{currentTabsIndex===2}}">
+        <view class="deviceList" bindtap="deviceShow">
+            <text>{{deviceType}}</text>
+            <image src="../../images/right.png"></image>
+        </view>
+        <view class="more-title">text设备收入列表</view>
+        <scroll-view scroll-y="true" bindscrolltolower="loadMoreDeviceList" style="height: calc(100% - 160rpx)">
+            <view class="income-list">
+                <view class="tr">
+                    <view class="th">设备昵称</view>
+                    <view class="th">总收入</view>
+                    <view class="th">销售收入</view>
+                    <view class="th">利润</view>
+                </view>
+                <view class="tr" wx:for="{{deviceList}}" wx:key="{{index}}">
+                    <view class="td">{{item.nickName}}</view>
+                    <view class="td">{{item.allCost}}</view>
+                    <view class="td">{{item.salePrice}}</view>
+                    <view class="td">{{item.incomePrice}}</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+
+    <modal hidden="{{hidden}}"  confirm-text="确定" cancel-text="取消" bindcancel="cancel"
+           bindconfirm="confirm">
+        <view class="section">
+            <picker mode="date" value="{{time}}" bindchange="bindStartTimeChange">
+                <view class="picker">
+                    开始时间 : {{createTimeStar}}
+                </view>
+            </picker>
+        </view>
+        <view class="section">
+            <picker mode="date" value="{{time}}" bindchange="bindSendTimeChange">
+                <view class="picker">
+                    结束时间 : {{createTimeEnd}}
+                </view>
+            </picker>
+        </view>
+    </modal>
+</view>

@@ -1,0 +1,50 @@
+<!--pages/vendingMachine/vendingChild/vendingChild.wxml-->
+<!--  运营中 -->
+<view class="container">
+    <!--头部-->
+    <view class="head">
+        <view class="addMan">新增员工</view>
+    </view>
+
+    <!--没有人-->
+    <view class="noMan">
+        <view class="headImg" bindtap="choose">
+            <image src="{{headImg}}"></image>
+        </view>
+        <view class="loginName">
+            登录账号：<input type="text" placeholder="必填" disabled="{{hidden}}" value="{{loginName}}"
+                        bindinput="loginNameInput"/>
+        </view>
+        <view class="password">
+            登录密码：<input type="password" placeholder="必填" value="{{password}}" bindinput="passwordInput"
+                        disabled="{{hidden}}"/>
+        </view>
+        <view class="realName">
+            真实姓名：<input type="text" placeholder="" value="{{realName}}" bindinput="userNameInput"
+                        disabled="{{hidden}}"/>
+        </view>
+        <view class="phone">
+            手机号：<input type="idcard" placeholder="" value="{{phone}}" disabled="{{hidden}}" bindinput="phoneInput"/>
+        </view>
+        <view class="age">
+            年龄：<input type="idcard" placeholder="" value="{{age}}" disabled="{{hidden}}" bindinput="ageInput"/>
+        </view>
+        <view class="card">
+            身份证号：<input type="idcard" placeholder="" value="{{card}}" disabled="{{hidden}}" bindinput="cardInput"/>
+        </view>
+        <view class="sex">
+            <view>性别： </view>
+            <picker class='' value="{{index}}" range="{{sex}}" bindchange="bindChange">
+                <span>{{sex[index]}}</span>
+            </picker>
+        </view>
+        <view class="state">
+            <view class="title">{{state}}：</view>
+            <view class="{{status===1?'button yuan':'button'}}" bindtap="state">
+                <view class="{{status===1?'yuan':''}}"></view>
+            </view>
+        </view>
+    </view>
+    <!--保存-->
+    <view class="save" bindtap="save">保存</view>
+</view>

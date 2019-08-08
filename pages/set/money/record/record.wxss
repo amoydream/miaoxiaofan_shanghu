@@ -1,0 +1,22 @@
+.mainBottom_refresh,.mainBottom_loadMore{
+    text-align: center;
+    font-size: 32rpx;
+}
+.container{
+    height: 100%;
+}
+.mainBottom{
+    height: 100%;
+}
+.record_list{
+    font-size: 30rpx;
+    line-height: 60rpx;
+    padding: 0 20rpx;
+    border-bottom: 10rpx solid #f8f8f8;
+}
+.record_list>view{
+    display: flex;
+}
+.record_list>view>view{
+    flex: 1;
+}

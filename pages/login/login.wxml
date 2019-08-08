@@ -1,0 +1,27 @@
+<!--login.wxml-->
+<view class="container">
+    <view class="head">
+        <image src="../../images/loginHead.png"></image>
+    </view>
+
+
+
+    <view class="itemView">
+        <image src="../../images/yonghu.png" class="user"></image>
+        <input type="text" name="userName" placeholder="请输入用户名" bindblur="userNameInput" bindinput="userNameInput" />
+    </view>
+    <view class="itemView">
+        <image src="../../images/mima.png" class="password"></image>
+        <input type="password" name="password" placeholder="请输入密码" bindblur="userPasswordInput" bindinput="userPasswordInput" />
+    </view>
+
+    <!--<view class="code">-->
+        <!--<image src="../../images/ziyuan.png" class="user"></image>-->
+        <!--<input type="text" placeholder="输入验证码" bindblur="codedInput" bindinput="codedInput" />-->
+        <!--<canvas class='canvas' style="width:{{cvs.width}};height:{{cvs.height}};" canvas-id="canvas" bindtap='onReady'></canvas>-->
+    <!--</view>-->
+
+    <view class="viewLogin" style="background-color:#fbf9fe">
+        <view class="loginBtn" style="background: {{color}}" bindtap="loginBtnClick">登录</view>
+    </view>
+</view>

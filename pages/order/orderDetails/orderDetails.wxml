@@ -1,0 +1,59 @@
+<view class="container" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="detail">
+        <view class="device-info">
+            <view class="item-title">{{orderDetails.no}}</view>
+        </view>
+        <view class="goods-detail clearfloat" wx:for="{{goodsInfo}}" wx:key="index">
+            <view class="goods-img">
+                <image src="{{ip}}{{item.goods.img}}"></image>
+            </view>
+            <view class="goods-name">{{item.goods.name}}</view>
+            <view class="goods-price">￥{{item.goods.price}}</view>
+            <view class="goods-channelNo">
+                <text>出货口:</text>
+                {{item.channelShowNo===null?'':item.channelShowNo}}
+            </view>
+        </view>
+        <view class="count-price">
+            <view>实付金额</view>
+            <view>￥{{orderDetails.realPrice}}</view>
+        </view>
+        <view class="refund_btn">
+            <view bindtap="onLine">线上退款</view>
+            <view bindtap="offLine">线下退款</view>
+        </view>
+        <view class="order-box">
+            <view class="title">订单信息</view>
+            <view class="item">消费者昵称：{{orderDetails.customer.name}}</view>
+            <view class="item">消费者手机号：{{orderDetails.customer.phone}}</view>
+            <view class="item">交易日期：{{orderDetails.createTime}}</view>
+            <view class="item">支付平台订单号：{{orderDetails.no}}</view>
+            <view class="item">内部订单号：{{orderDetails.unionCode}}</view>
+        </view>
+    </view>
+
+    <modal title="提示" hidden="{{hidden}}" confirm-text="确认" cancel-text="退出" bindconfirm="listenerConfirm"
+           bindcancel="listenerCancel">
+        <checkbox-group bindchange="checkboxChange">
+            <label style="display: flex;" wx:for-items="{{items}}" wx:key="{{index}}">
+                <checkbox value="{{item.name}}" checked="{{item.checked}}">{{item.value}}</checkbox>
+            </label>
+        </checkbox-group>
+    </modal>
+
+
+    <view class="manage">
+        <view class="device-btn" bindtap="handle">
+            设备管理
+        </view>
+        <view class="all-btn" style="width:{{width}}rpx">
+            <view class="one" bindtap="channelRepair">货道修正</view>
+            <view class="two" bindtap="orderRepair">订单修正</view>
+            <view class="three" bindtap="close">{{deviceStatus==1?'关闭设备':'开启设备'}}</view>
+            <view class="four" bindtap="test">货道测试</view>
+            <view class="five" bindtap="orderAndChannelRepair">订单/货道修正</view>
+        </view>
+    </view>
+
+
+</view>

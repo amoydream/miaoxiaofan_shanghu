@@ -1,0 +1,33 @@
+<view class="container">
+    <view class="test_switch">
+        <image src="../../../images/network.png"></image>
+        <text>网络监控</text>
+        <view class="btn {{switch1===1?'':'active'}}" bindtap="open1"></view>
+    </view>
+    <view class="test_switch">
+        <image src="../../../images/temperature.png"></image>
+        <text>温度监控</text>
+        <view class="btn {{switch2===1?'':'active'}}" bindtap="open2"></view>
+    </view>
+    <view class="test_switch">
+        <image src="../../../images/guang.png"></image>
+        <text>光检监控</text>
+        <view class="btn {{switch3===1?'':'active'}}" bindtap="open3"></view>
+    </view>
+
+    <view class="test_main">
+        <view class="test_main_title">设备质检</view>
+        <view class="test_main_item" bindtap="allTest">
+            <text>全货道测试</text>
+            <image src="../../../images/right.png"></image>
+        </view>
+        <view class="test_main_item" bindtap="skipMoreTest">
+            <text>多货道测试</text>
+            <image src="../../../images/right.png"></image>
+        </view>
+        <view class="test_main_item">
+            <text>货道故障解除</text>
+            <image src="../../../images/right.png"></image>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,32 @@
+<view class="container">
+    <scroll-view class="manList" scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="refesh">
+        <view class="mainBottom_refresh" hidden="{{refresh}}">刷新中...</view>
+        <view class="item" wx:for="{{manList}}" wx:key="{{index}}">
+            <view class="item-left">
+                <view class="no">
+                    <image src="../../../images/p-name.png"></image>
+                    <text>{{item.realName}}</text>
+                </view>
+                <view class="address">
+                    <image src="../../../images/p-phone.png"></image>
+                    <text>{{item.phone}}</text>
+                </view>
+            </view>
+            <view class="item-right" bindtap="choose" data-index="{{index}}">
+                <image src="{{item.choose==0?'../../../images/noxuan1.png':'../../../images/noxuan2.png'}}"></image>
+            </view>
+            <view class="item-bottom">已负责{{item.foo==null?'0':item.foo.num}}台设备</view>
+        </view>
+        <view class="mainBottom_loadMore" hidden="{{load}}">{{two}}</view>
+    </scroll-view>
+    <!--确定-->
+    <view class="affirm">
+        <view  bindtap="chooseAll">
+            <image src="{{chooseAll==0?'../../../images/noxuan1.png':'../../../images/noxuan2.png'}}"></image>
+            <text>全选</text>
+        </view>
+        <view >
+            <view class="btn" bindtap="add">确定分配</view>
+        </view>
+    </view>
+</view>

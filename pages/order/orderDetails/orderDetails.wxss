@@ -1,0 +1,193 @@
+.container{
+    height: 100%;
+    box-sizing: border-box;
+    background: #f2f2f2;
+    color: #333333;
+}
+
+
+.goods-detail{
+    padding: 20rpx 30rpx;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+
+.goods-detail .goods-img{
+    width: 130rpx;
+    height: 130rpx;
+    display: inline-block;
+    float: left;
+}
+
+.goods-detail .goods-img image{
+    width: 100%;
+    height: 100%;
+}
+
+.goods-detail .goods-name{
+    width: 300rpx;
+    font-size: 30rpx;
+    float: left;
+    padding-left: 20rpx;
+    line-height: 130rpx;
+}
+
+.goods-detail .goods-price{
+    line-height: 130rpx;
+    text-align: right;
+    font-size: 28rpx;
+    color: #333333;
+}
+
+.count-price{
+    height: 88rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30rpx;
+    background: white;
+    font-size: 30rpx;
+    color: #333333;
+}
+
+.count-price>view:nth-child(2){
+    color: #595CA1;
+}
+
+.refund_btn{
+    height: 98rpx;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.refund_btn>view{
+    width:150rpx;
+    height:58rpx;
+    border:2rpx solid rgba(214,214,214,1);
+    border-radius:29rpx;
+    color: #999999;
+    line-height: 58rpx;
+    text-align: center;
+    font-size: 26rpx;
+    margin-right: 20rpx;
+}
+
+.goods-detail .goods-channelNo{
+    font-size:26rpx;
+    text-align: right;
+    color: #666666;
+}
+
+.item-title{
+    margin: 0 auto;
+    background: white;
+    font-size: 30rpx;
+    line-height: 88rpx;
+    padding-left: 30rpx;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.order-box{
+    padding: 30rpx;
+    background: white;
+    margin-top: 20rpx;
+}
+
+.title{
+   font-size: 30rpx;
+    color: #333333;
+    border-left: 5rpx solid #595CA1;
+    padding: 0 10rpx;
+    margin-bottom: 20rpx;
+}
+
+.order-box .item{
+    font-size: 26rpx;
+    color: #666666;
+    line-height: 60rpx;
+}
+
+
+/*按钮*/
+.manage{
+    width: 100%;
+    height: 88rpx;
+    position: fixed;
+    bottom: 0;
+    background: white;
+}
+
+.manage .device-btn{
+    width: 60px;
+    height: 60px;
+    background: #595CA1;
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size:14px;
+    z-index: 999;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.all-btn{
+    position: absolute;
+    width: 490rpx;
+    height: 245rpx;
+    left: 50%;
+    top: -265rpx;
+    transform: translateX(-50%);
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.all-btn>view{
+    width:94rpx;
+    height:94rpx;
+    background:rgba(206,178,103,1);
+    border-radius:50%;
+    color: white;
+    position: absolute;
+    font-size: 22rpx;
+    padding: 15rpx 24rpx;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.all-btn .one{
+    bottom: 0;
+    left: 0;
+    background: #ffcd44;
+}
+.all-btn .two{
+    bottom: 104rpx;
+    left: 79rpx;
+    background: #6AC8F4;
+}
+
+.all-btn .three{
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #24CE3C;
+}
+
+.all-btn .four{
+    bottom: 104rpx;
+    right: 79rpx;
+    background: #DC4C3F;
+}
+
+.all-btn .five{
+    bottom: 0;
+    right: 0;
+    font-size:20rpx;
+    padding: 20rpx 11rpx;
+}

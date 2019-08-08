@@ -1,0 +1,93 @@
+<view class="container">
+    <view class="chooseBtn">
+        <view class="{{chooseIndex==index?'select':''}}" data-index="{{index}}" wx:for="{{chooseArr}}" wx:key="{{index}}" catchtap="chooseBtn">{{item}}</view>
+    </view>
+
+    <view class="analyzeMain">
+        <view class="analyzeItem">
+            <view class="itemTitle">财务统计</view>
+            <view class="itemMain">
+                <view>
+                    <text>￥{{allIncome}}</text>
+                    <view class="name">总收入</view>
+                </view>
+                <view>
+                    <text>￥{{allCost}}</text>
+                    <view class="name">总成本</view>
+                </view>
+                <view>
+                    <text>￥{{allProfit}}</text>
+                    <view class="name">总利润</view>
+                </view>
+            </view>
+        </view>
+        <view class="analyzeItem">
+            <view class="itemTitle">销售统计</view>
+            <view class="itemMain">
+                <view>
+                    <text>￥{{saleIncome}}</text>
+                    <view class="name">总收入</view>
+                </view>
+                <view>
+                    <text>￥{{saleCost}}</text>
+                    <view class="name">总成本</view>
+                </view>
+                <view>
+                    <text>￥{{saleProfit}}</text>
+                    <view class="name">总利润</view>
+                </view>
+            </view>
+        </view>
+        <view class="analyzeItem">
+            <view class="itemTitle">抽奖统计</view>
+            <view class="itemMain">
+                <view>
+                    <text>￥{{luckIncome}}</text>
+                    <view class="name">总收入</view>
+                </view>
+                <view>
+                    <text>￥{{luckCost}}</text>
+                    <view class="name">总成本</view>
+                </view>
+                <view>
+                    <text>￥{{luckProfit}}</text>
+                    <view class="name">总利润</view>
+                </view>
+            </view>
+        </view>
+        <view class="analyzeItem">
+            <view class="itemTitle">抽奖次数统计</view>
+            <view class="itemMain">
+                <view>
+                    <text>{{luckNum}}</text>
+                    <view class="name">总次数</view>
+                </view>
+                <view>
+                    <text>{{hitNum}}</text>
+                    <view class="name">中奖数</view>
+                </view>
+                <view>
+                    <text>{{hitRate}}</text>
+                    <view class="name">中奖率</view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <modal hidden="{{hidden}}" title="自定义时间" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+        <view class="section">
+        <picker mode="date" value="{{time}}"  bindchange="bindStartTimeChange">
+        <view class="picker">
+        开始时间 : {{startTime}}
+        </view>
+        </picker>
+        </view>
+        <view class="section">
+        <picker mode="date" value="{{time}}"  bindchange="bindSendTimeChange">
+        <view class="picker">
+        结束时间 : {{endTime}}
+        </view>
+        </picker>
+        </view>
+    </modal>
+</view>

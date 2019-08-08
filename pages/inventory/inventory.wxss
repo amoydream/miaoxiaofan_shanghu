@@ -1,0 +1,89 @@
+page{
+    background: #f2f2f2;
+}
+.container{
+    height: 100%;
+}
+.title{
+    display: flex;
+    font-size: 28rpx;
+    color: #333333;
+    height: 80rpx;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    background: white;
+}
+.title>view{
+    line-height: 80rpx;
+    flex: 1;
+    text-align: center;
+}
+
+.title>view.active{
+    color: #595CA1;
+    border-bottom: 4rpx solid #595CA1;
+}
+
+.main{
+    padding: 30rpx 20rpx;
+    height: calc(100% - 80rpx);
+    box-sizing: border-box;
+}
+
+.main .main-item{
+    height: 230rpx;
+    background: white;
+    border-radius:8px;
+    padding: 0 30rpx;
+    margin-bottom: 20rpx;
+}
+.main .main-item .main-item-title{
+    font-size:28rpx;
+    font-weight:bold;
+    color:rgba(51,51,51,1);
+    height: 70rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main .main-item .main-item-title image{
+    width: 20rpx;
+    height: 34rpx;
+}
+
+.main .main-item .main-item-box{
+   height: 120rpx;
+    display: flex;
+}
+.main .main-item .main-item-box>view{
+    flex: 1;
+    font-size:26rpx;
+    color:rgba(102,102,102,1);
+}
+.main .main-item .main-item-box>view:nth-child(2){
+    border-left: 1rpx solid #EFEFEF;
+    padding-left: 30rpx;
+    box-sizing: border-box;
+}
+
+.main .main-item .main-item-box>view>view{
+    line-height: 60rpx;
+}
+
+.main .main-item .main-item-box>view>view text{
+    color: #595CA1;
+}
+
+.main-item-box-left>view{
+    width: 308rpx;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.mainBottom_loadMore,.mainBottom_refresh{
+    text-align: center;
+    line-height: 40rpx;
+    font-size: 28rpx;
+}

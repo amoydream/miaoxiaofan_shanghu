@@ -1,0 +1,82 @@
+page{
+    background: #F2F2F2;
+}
+
+.container{
+    padding: 20rpx;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.item-box{
+    height: 320rpx;
+    background: white;
+    border-radius: 8rpx;
+    font-size:28rpx;
+    color:rgba(51,51,51,1);
+    margin-bottom: 20rpx;
+    position: relative;
+}
+
+.price{
+    display: flex;
+    border-top: 1rpx solid #f2f2f2;
+    box-sizing: border-box;
+}
+
+.price>view{
+    flex: 1;
+}
+
+.goods-name{
+    line-height: 64rpx;
+    border-bottom: 1rpx solid #f2f2f2;
+    box-sizing: border-box;
+}
+
+.goods-name text{
+    padding: 0 20rpx;
+}
+
+.select{
+    position: absolute;
+    height: 60rpx;
+    width: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 30rpx;
+}
+
+.select image{
+    width: 35rpx;
+    height: 35rpx;
+}
+
+.goods-info{
+    line-height: 64rpx;
+    padding-left: 20rpx;
+    font-size: 26rpx;
+}
+
+.mainBottom_refresh,.mainBottom_loadMore{
+    text-align: center;
+    line-height: 64rpx;
+    font-size: 28rpx;
+}
+
+.part_main{
+    height: calc(100% - 85rpx);
+}
+
+.affirm{
+    left: 0;
+    height:88rpx;
+    text-align: center;
+    line-height: 88rpx;
+    color: white;
+    background:rgba(89,92,161,1);
+    width: 750rpx;
+    position: fixed;
+    bottom: 0;
+}

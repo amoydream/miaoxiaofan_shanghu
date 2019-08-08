@@ -1,0 +1,78 @@
+.container{
+    box-sizing: border-box;
+    padding-top: 15rpx;
+}
+.section{
+    font-size: 30rpx;
+}
+.chooseBtn{
+    width: 690rpx;
+    height: 74rpx;
+    display: flex;
+    margin: 0 auto;
+    border: 1px solid #CEB267;
+    border-radius: 8rpx;
+    margin-bottom: 15rpx;
+}
+.chooseBtn>view{
+    flex: 1;
+    font-size:28rpx;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    text-align: center;
+    line-height: 74rpx;
+    color: #333333;
+}
+.chooseBtn>view.select{
+    background:rgba(206,178,103,1);
+    color: white;
+}
+
+.analyzeMain{
+    background: #f2f2f2;
+    padding-bottom: 54rpx;
+}
+
+.analyzeMain .analyzeItem{
+    width: 710rpx;
+    height: 240rpx;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8rpx;
+    border-top: 20rpx solid #f2f2f2;
+}
+
+.analyzeMain .analyzeItem .itemTitle{
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size:28rpx;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    padding-left: 30rpx;
+    border-bottom: 1px solid #f2f2f2;
+}
+.analyzeMain .analyzeItem .itemMain{
+    display: flex;
+    height: 160rpx;
+}
+
+.analyzeMain .analyzeItem .itemMain>view{
+   border-left: 1px solid #f2f2f2;
+    flex: 1;
+    text-align: center;
+}
+
+.analyzeMain .analyzeItem .itemMain>view text{
+    font-size:30rpx;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(89,92,161,1);
+    line-height: 80rpx;
+}
+.analyzeMain .analyzeItem .itemMain>view .name{
+    font-size:28rpx;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+}

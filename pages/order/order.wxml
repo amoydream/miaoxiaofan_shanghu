@@ -1,0 +1,96 @@
+<view class="container">
+    <view class="head">
+        <view class="condition">
+            <view class="{{currentTabsIndex==index?'active':''}}" wx:for="{{orderTitle}}" wx:key="*this"
+                  data-index="{{index}}" bindtap="onTabsItemTap">{{item}}
+            </view>
+        </view>
+
+    </view>
+    <!--订单管理-->
+    <view class="management {{currentTabsIndex===0?'show':''}}">
+        <view class="management-tab">
+            <view class="{{stateIndex==index?'active':''}}" wx:for="{{stateTitle}}" wx:key="*this"
+                  data-index="{{index}}" bindtap="onTabOrder">{{item}}
+            </view>
+        </view>
+        <scroll-view class='main-box' scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="refesh">
+            <view class="mainBottom_refresh" hidden="{{refresh}}">刷新中...</view>
+            <view class="management-item" wx:for="{{orderItem}}" wx:key="index">
+                <view class="item-title">
+                    <text class="time">{{item.createTime}}</text>
+                    <view class="look-detail" catchtap="lookDetails" data-id="{{item.id}}">查看详情</view>
+                    <view class="{{item.status===9?'state success':'state error'}}">
+                        {{item.status===9?'出货成功':item.status===0?"未支付":"出货失败"}}
+                    </view>
+                </view>
+                <view class="item-main clearfloat" wx:for="{{item.goods}}" wx:for-item="goods" wx:key="index">
+                    <image src="{{ip}}{{goods.img}}" class="left"></image>
+                    <view class="middle">
+                        <text>{{goods.name}}</text>
+                        <!--<text style="color: #93867d"> 机器：{{goods.name}}</text>-->
+                    </view>
+                    <view class="right">
+                        <text class="price" style="color: #595CA1">{{goods.discount}}</text>
+                        <text class="number">x{{goods.num}}</text>
+                        <!--<text class="clear" hidden="{{item.status===9?'false':'true'}}">-->
+                            <!--出货口：{{goods.channelNo}}-->
+                        <!--</text>-->
+                    </view>
+                </view>
+                <view class="item-foot">
+                    <text style="color: #93867d">单号：{{item.no}}</text>
+                    <view>实付：
+                        <text style="color:#595CA1">{{item.realPrice==null?'0':item.realPrice}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="mainBottom_loadMore" hidden="{{load}}">{{two}}</view>
+            <view class="no-data" hidden="{{orderNo}}">
+                <image src="../../images/no-order.png"></image>
+                <view>您还没有相关的订单</view>
+            </view>
+        </scroll-view>
+    </view>
+    <!--抽奖管理-->
+    <view class="management {{currentTabsIndex===1?'show':''}}">
+        <view class="management-tab">
+            <view class="{{drawIndex==index?'active':''}}" wx:for="{{drawTitle}}" wx:key="*this" data-index="{{index}}"
+                  bindtap="onTabDraw">{{item}}
+            </view>
+        </view>
+        <scroll-view class='main-box' scroll-y="true" bindscrolltolower="loadMore1" bindscrolltoupper="refesh1">
+            <view class="mainBottom_refresh" hidden="{{refresh1}}">刷新中...</view>
+            <view class="management-item" wx:for="{{drawItem}}" wx:key="index">
+                <view class="item-title">
+                    <text class="time">{{item.createTime}}</text>
+                    <view class="look-detail" catchtap="lookDetails" data-id="{{item.id}}">查看详情</view>
+                    <view class="{{item.status===9?'state success':'state error'}}">
+                        {{item.status===9?'出货成功':item.status===0?"未支付":item.status===10?"无需出货":item.status===13?"存货":"出货失败"}}
+                    </view>
+                </view>
+                <view class="item-main clearfloat"  wx:for="{{item.goods}}"  wx:for-item="goods" wx:key="index">
+                    <image src="{{ip}}{{goods.img}}" class="left"></image>
+                    <view class="middle">
+                        <text>{{goods.name}}</text>
+                    </view>
+                    <view class="right">
+                        <text class="price" style="color: #595CA1">{{goods.discount}}</text>
+                        <text class="number">x{{goods.num}}</text>
+                    </view>
+                </view>
+                <view class="item-foot">
+                    <text style="color: #93867d">单号：{{item.no}}</text>
+                    <view>实付：
+                        <text style="color:#595CA1">{{item.realPrice==null?'0':item.realPrice}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="mainBottom_loadMore" hidden="{{load1}}">{{two1}}</view>
+            <view class="no-data" hidden="{{drawNo}}">
+                <image src="../../images/no-draw.png"></image>
+                <view>您还没有相关的抽奖记录</view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

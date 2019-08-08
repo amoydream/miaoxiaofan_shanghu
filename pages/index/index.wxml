@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="index_top">
+        <view class="head_top">
+            <view>
+                <text class="title">今日收入(元)</text>
+                <text class="info">{{today}}</text>
+            </view>
+            <view>
+                <text class="title">昨日收入(元)</text>
+                <text class="info">{{yesterday}}</text>
+            </view>
+        </view>
+        <view class="head">
+            <view class="item">
+                <text class="title">商品成本</text>
+                <text class="info">{{todayCost}}</text>
+            </view>
+            <view class="item">
+                <text class="title">预估利润</text>
+                <text class="info">{{todayGain}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="main clearfloat">
+        <navigator class="item" url="../operation/operation">
+            <image src="../../images/operation.png"></image>
+            <text>运营监控</text>
+        </navigator>
+        <navigator class="item" url="../order/order">
+            <image src="../../images/order.png"></image>
+            <text>订单管理</text>
+        </navigator>
+        <navigator class="item" url="../data/data">
+            <image src="../../images/data.png"></image>
+            <text>数据分析</text>
+        </navigator>
+        <navigator class="item" url="../shopAdministrator/shopAdministrator">
+            <image src="../../images/goods.png"></image>
+            <text>商品管理</text>
+        </navigator>
+        <navigator class="item" url="../vendingMachine/vendingMachine">
+            <image src="../../images/vendingMachine.png"></image>
+            <text>售货机管理</text>
+        </navigator>
+        <!--<navigator class="item" url="../part/part">-->
+            <!--<image src="../../images/part.png"></image>-->
+            <!--<text>巡货员管理</text>-->
+        <!--</navigator>-->
+        <!--<navigator class="item" url="../analyze/analyze">-->
+            <!--<image src="../../images/analyze.png"></image>-->
+            <!--<text>利润统计</text>-->
+        <!--</navigator>-->
+        <!--<navigator class="item" url="../examine/examine">-->
+            <!--<image src="../../images/shouru.png"></image>-->
+            <!--<text>账单收入</text>-->
+        <!--</navigator>-->
+        <navigator class="item" url="../set/set">
+            <image src="../../images/my.png"></image>
+            <text>个人中心</text>
+        </navigator>
+    </view>
+</view>

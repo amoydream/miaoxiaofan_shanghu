@@ -1,0 +1,134 @@
+<!--pages/vendingMachine/vendingMachine.wxml-->
+<!--<text>售货机管理</text>-->
+<view class="container" bindtap="allHide">
+    <view class="head">
+        <view>
+            <view wx:for="{{deviceClass}}" wx:key="{{index}}" class="{{deviceClassIndex==index?'active':''}}"
+                  bindtap="chooseDeviceClass" data-index="{{index}}">{{item}}</view>
+        </view>
+    </view>
+    <view class="deviceStatus" wx:if="{{deviceClassIndex===0}}">
+        <!--  上部分  -->
+        <view class="shopMiddle">
+            <view class="shopMiddleAll">
+                <view wx:for="{{shopList}}" wx:key='{{index}}' bindtap="BtnTabList" data-TabIndex='{{index}}'
+                      class="{{shopListIndex==index?'shopMiddleAllTab':''}}">{{item}}</view>
+            </view>
+        </view>
+        <!--  中部分  -->
+        <scroll-view class="shopAddress" scroll-y="true" bindscrolltolower="loadMore1" bindscrolltoupper="refesh1">
+            <view class="without" hidden="{{without}}">
+                <image src="../../images/no-device.png"></image>
+                <view>您还没有相关的售货机</view>
+            </view>
+            <view class="mainBottom_refresh" hidden="{{refresh}}">刷新中...</view>
+            <view class="shopMessage" wx:for="{{info}}" wx:key="index">
+                <view class="shopNumber">
+                    <view class="shopNumberLeft">
+                        <image src="../../images/bianhao.png"></image>
+                        <view>{{item.no}}</view>
+                    </view>
+                </view>
+                <view class="shopAddressAll">
+                    <image src="../../images/address.png"></image>
+                    <view class="shopAddressText">{{item.address}}</view>
+                </view>
+                <!--  商圈  -->
+                <view class="goods" wx:for="{{item.areas}}" wx:key="index">
+                    <image src="../../images/shanquan.png"></image>
+                    <text>{{item.name}}</text>
+                </view>
+                <!--巡货员-->
+                <view class="man" wx:for="{{item.inspectors}}" wx:key="{{index}}" catchtap="del">
+                    <view>
+                        <image src="../../images/p-name.png"></image>
+                        <text>{{item.realName}}</text>
+                    </view>
+                    <view catchtap="del" data-id="{{item.id}}" data-deviceId="{{item.deviceId}}">
+                        <image src="../../images/del.png" class="del"></image>
+                    </view>
+                </view>
+                <!--  最后更多 -->
+                <view class="shopLastMore">
+                    <view class="more" catchtap="btnShow" data-index="{{index}}">
+                        <image src="../../images/more1.png"></image>
+                    </view>
+                    <view class="operate" hidden="{{item.hidden}}">
+                        <view class="qr" data-url="{{item.scanUrl}}" catchtap="skip" data-id="{{item.id}}"
+                              data-structureid="{{item.structureId}}">
+                            <image src="../../images/shebeigoods.png"></image>
+                            <view class="text">设备库存</view>
+                        </view>
+                        <view class="qr" data-url="{{item.scanUrl}}" catchtap="tapHandler" data-id="{{item.id}}">
+                            <image src="../../images/test.png"></image>
+                            <view class="text">监控测试</view>
+                        </view>
+                        <view class="stop" catchtap="look" data-id="{{item.id}}">
+                            <image src="../../images/peizhi.png"></image>
+                            <view class="text">运营配置</view>
+                        </view>
+                        <view class="add" catchtap="allocation" data-id="{{item.id}}"
+                              data-inspectors="{{item.inspectors}}">
+                            <image src="../../images/fengpei.png"></image>
+                            <view class="text">分配补货员</view>
+                        </view>
+                        <view class="stop" bindtap="stopOne" data-id="{{item.id}}">
+                            <image src="../../images/stop.png"></image>
+                            <view class="text">{{state}}</view>
+                        </view>
+                        <!--<view class="del" data-id="{{item.id}}" catchtap="delShow">删除巡货员</view>-->
+                    </view>
+                </view>
+                <view class="select" data-id="{{item.id}}" data-index="{{index}}" bindtap="choose">
+                    <image src="{{item.choose==0?'../../images/noxuan1.png':'../../images/noxuan2.png'}}"></image>
+                </view>
+            </view>
+            <view class="mainBottom_loadMore" hidden="{{load}}">{{two}}</view>
+        </scroll-view>
+        <!--下部分-->
+        <view class="shopAdd">
+            <view class="select" bindtap="chooseAll">
+                <image src="{{chooseAll==0?'../../images/noxuan1.png':'../../images/noxuan2.png'}}"></image>
+                <text>全选</text>
+            </view>
+            <view class="btn">
+                <view bindtap="stopAll">{{state}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="part" wx:if="{{deviceClassIndex===1}}">
+        <view class="part_head">
+            <navigator url="../vendingMachine/vendingChild/vendingChild">添加巡货员</navigator>
+        </view>
+        <scroll-view class='part_main' scroll-y="true" bindscrolltolower="loadMore"  bindtap="deviceHide">
+            <view class="main_item" wx:for="{{manList}}" wx:key="index" data-id="{{item.id}}" catchtap="lookInfo">
+                <view class="item_name">
+                    <image src="../../images/p-name.png"></image>
+                    {{item.realName}}
+                </view>
+                <view class="item_phone">
+                    <image src="../../images/p-phone.png"></image>
+                    {{item.phone}}
+                    <view class="addDevice" catchtap="addDevice" data-id="{{item.id}}">分配设备</view>
+                </view>
+                <view class="item_bottom">
+                    <view class="item_bottom_child" catchtap="delman" data-id="{{item.id}}">
+                        删除
+                    </view>
+                    <view>
+                        <navigator class="item_bottom_child" url="editInfo/editInfo?id={{item.id}}&type=2">
+                            编辑
+                        </navigator>
+                    </view>
+                    <view>
+                        <navigator  url="inventory/inventory?id={{item.id}}">
+                            查看
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+            <view class="mainBottom_loadMore" hidden="{{load1}}">{{two1}}</view>
+        </scroll-view>
+    </view>
+</view>

@@ -1,0 +1,37 @@
+<view class="container">
+    <view class="head">
+        <view class="head-item">
+            <view wx:for="{{headText}}" wx:key="{{index}}" class="{{headIndex===index?'active':0}}" bindtap="cut"
+                  data-index="{{index}}">{{item}}</view>
+        </view>
+    </view>
+    <!--日期主体-->
+    <scroll-view class='s-main' scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="refesh" bindtap="deviceHide" hidden="{{dateShow}}">
+        <view class="mainBottom_refresh" hidden="{{refresh1}}">刷新中...</view>
+        <view class="item">
+            <view class="date day">日期</view>
+            <view class="income">总收入(元)</view>
+            <view class="income">预估利润(元)</view>
+        </view>
+        <view class="item" wx:for="{{income}}" wx:key="{{index}}">
+            <view class="date">{{item.day}}</view>
+            <view class="income feature">{{item.income}}</view>
+            <view class="income">{{item.foo.profit}}</view>
+        </view>
+        <view class="mainBottom_loadMore" hidden="{{load1}}">{{two1}}</view>
+    </scroll-view>
+    <!--月份-->
+
+    <view class="main" hidden="{{MonthShow}}">
+        <view class="item">
+            <view class="date day">月份</view>
+            <view class="income">总收入(元)</view>
+            <view class="income">预估利润(元)</view>
+        </view>
+        <view class="item" wx:for="{{income}}" wx:key="{{index}}">
+            <view class="date">{{item.day}}</view>
+            <view class="income feature">{{item.income}}</view>
+            <view class="income">{{item.foo.profit}}</view>
+        </view>
+    </view>
+</view>

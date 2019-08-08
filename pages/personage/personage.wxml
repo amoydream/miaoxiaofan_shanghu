@@ -1,0 +1,58 @@
+<view class="container" bindtap="hide">
+    <view class="addInfo">
+        <view class="number">
+            <text>合作商名称：</text>
+            <input type="text" placeholder="" value="{{name}}" disabled/>
+        </view>
+        <view class="number">
+            <text> 合作商编号：</text>
+           <input type="text" placeholder="" value="{{no}}" disabled/>
+        </view>
+        <view class="number">
+            <text>固定电话：</text>
+            <input type="text" placeholder=""  bindinput="fixedInput" value="{{fixed}}"/>
+        </view>
+        <view class="number">
+            <text>手机号码：</text>
+            <input type="text" placeholder="" bindinput="phoneInput" value="{{phone}}"/>
+        </view>
+        <view class="number">
+            <text>传真地址：</text>
+            <input type="text" placeholder="" bindinput="faxInput" value="{{fax}}"/>
+        </view>
+        <view class="number address">
+          <text>选择地址：</text>
+            <view class="main">
+                <view class="province" catchtap="pShow">
+                    <text>{{provinceName}}</text>
+                    <scroll-view scroll-y="true" class="pScroll" hidden="{{pShow}}">
+                        <view class="item" wx:for="{{province}}" wx:key="index" catchtap="chooseP" data-name1="{{item.name}}" data-no="{{item.no}}">{{item.name}}</view>
+                    </scroll-view>
+                </view>
+                <view class="province" catchtap="cShow">
+                    <text>{{cityName}}</text>
+                    <scroll-view scroll-y="true" class="pScroll" hidden="{{cShow}}">
+                        <view class="item" wx:for="{{city}}" wx:key="index" catchtap="chooseC" data-name1="{{item.name}}" data-no="{{item.no}}">{{item.name}}</view>
+                    </scroll-view>
+                </view>
+                <view class="province" catchtap="ccShow">
+                    <text>{{countyName}}</text>
+                    <scroll-view scroll-y="true" class="pScroll" hidden="{{ccShow}}">
+                        <view class="item" wx:for="{{county}}" wx:key="index" catchtap="chooseCc" data-name1="{{item.name}}" data-no="{{item.no}}">{{item.name}}</view>
+                    </scroll-view>
+                </view>
+            </view>
+
+        </view>
+        <view class="number">
+            <text>详细地址：</text>
+            <input type="text" placeholder="" bindinput="addressInput" value="{{address}}"/>
+        </view>
+
+        <!--<view class="btnBind">-->
+            <!--<button bindtap="bindWx">点击按钮绑定微信</button>-->
+            <!--<view class="text">(*方便微信接收货柜消息)</view>-->
+        <!--</view>-->
+    </view>
+    <view class="confirm" catchtap="amend">确认修改</view>
+</view>

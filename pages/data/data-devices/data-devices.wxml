@@ -1,0 +1,8 @@
+<view class="container">
+    <scroll-view class='deviceId' scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="refesh"  hidden="{{deviceShow}}">
+        <view class="mainBottom_refresh" hidden="{{refresh1}}">刷新中...</view>
+        <view class="item" catchtap="choose" data-id="" data-name1="全部售货机">全部售货机</view>
+        <view class="item" wx:for="{{device}}" wx:key="index" catchtap="choose" data-id="{{item.id}}" data-name1="{{item.nickName}}">{{item.nickName}}</view>
+        <view class="mainBottom_loadMore" hidden="{{load1}}">{{two1}}</view>
+    </scroll-view>
+</view>

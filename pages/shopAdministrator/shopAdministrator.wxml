@@ -1,0 +1,96 @@
+<!--pages/shopAdministrator/shopAdministrator.wxml-->
+<!--  商品管理页面  -->
+<view class="container" bindtap="close">
+    <!-- 上  -->
+    <view class='shopAll'>
+        <view class="head">
+            <view class="shopTop">
+                <view wx:for="{{title}}" wx:key='{{index}}' bindtap='BtnTab' data-index='{{index}}'
+                      class="{{currentTabsIndex==index?'shopTopTab':''}}">{{item}}
+                </view>
+            </view>
+        </view>
+        <view class="chooseSort">
+            <picker mode="selector" range="{{priceRank}}" value="{{index1}}" bindchange="bindChange1">
+                <text>{{priceRank[index1]}}</text>
+            </picker>
+            <picker mode="selector" range="{{nameRank}}" value="{{index}}" bindchange="bindChange2">
+                <text>{{nameRank[index2]}}</text>
+            </picker>
+        </view>
+
+    </view>
+    <!-- 商品管理  -->
+    <view class="shopManage {{currentTabsIndex==0? 'shopManageShow' : ''}}">
+        <!--  中  -->
+        <view class="shopMiddle">
+            <view class="shopMiddleAll">
+                <view wx:for="{{shopList}}" wx:key='{{index}}' bindtap="BtnTabList" data-TabIndex='{{index}}'
+                      class="{{shopListIndex==index?'shopMiddleAllTab':''}}">{{item}}
+                </view>
+            </view>
+        </view>
+        <!--   下   -->
+        <scroll-view class='shopFotter' scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="refesh">
+            <view class="mainBottom_refresh" hidden="{{refresh}}">刷新中...</view>
+            <view class="without" hidden="{{without}}">
+                <image src="../../images/no-goods.png"></image>
+                <view>您还没有相关的商品</view>
+            </view>
+            <view class="shopListOne" wx:for="{{goodsItem}}" wx:key="{{index}}">
+                <view class="select" data-index="{{index}}" bindtap="choose" data-id="{{item.id}}">
+                    <image src="{{item.choose===0?'../../images/noxuan1.png':'../../images/noxuan2.png'}}"></image>
+                </view>
+                <view class="shopFotterLeft">
+                    <image src="{{ip}}{{item.img}}"></image>
+                </view>
+                <view class="shopFotterRight">
+                    <view class="shopText">{{item.name}}</view>
+                    <view class="shopProduct">
+                        <view class="shopProductNewPrice">
+                            <view>¥{{item.price}}</view>
+                            <!--<view>0件已售</view>-->
+                        </view>
+                        <view class="shopProductOldPrice">
+                            <view>进价：{{item.cost}}</view>
+                        </view>
+
+                    </view>
+                    <view class="class-name">分类：{{item.clazz.name}}</view>
+                    <view class="operation">
+                        <view class="del" bindtap="update" data-id="{{item.id}}">修改</view>
+                        <view class="del" bindtap="del" data-id="{{item.id}}">删除</view>
+                    </view>
+                </view>
+            </view>
+            <view class="mainBottom_loadMore" hidden="{{load}}">{{two}}</view>
+        </scroll-view>
+    </view>
+
+
+    <!-- 分组管理  -->
+    <view class="groupManage {{currentTabsIndex==1? 'groupManageShow' : ''}}">
+        <navigator class="groupClassify" url="./shopListOne/shopListOne?id={{item.id}}" wx:for="{{className}}"
+                   wx:key="index">
+            <view>{{item.name}}</view>
+            <view>
+                <image src="../../images/right.png" style="width: 24rpx;height: 30rpx"></image>
+            </view>
+        </navigator>
+    </view>
+    <view class="shopAdd">
+        <navigator class="batch" url="addGoods/addGoods">添加商品</navigator>
+        <navigator class="batch" url="lead/lead">导入商品</navigator>
+        <view class="batch" catchtap="batch">批量管理</view>
+    </view>
+
+    <modal hidden="{{hidden}}" title="提示" confirm-text="确认" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" no-cancel="{{nocancel}}">
+        如果删除此商品,所有设备下将会全部清空此商品
+    </modal>
+
+    <view class="batchS" hidden="{{batch}}">
+        <view bindtap="batchDel">批量删除</view>
+        <view bindtap="upDown">{{status==0?'批量上架':'批量下架'}}</view>
+    </view>
+
+</view>

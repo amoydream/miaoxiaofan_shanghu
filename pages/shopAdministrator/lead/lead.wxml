@@ -1,0 +1,23 @@
+<view class="container">
+    <scroll-view class='part_main' scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="refesh">
+        <view class="mainBottom_refresh" hidden="{{refresh1}}">刷新中...</view>
+        <view class="item-box" wx:for="{{goodsItem}}" wx:key="{{index}}">
+            <view class="select" bindtap="choose" data-index="{{index}}">
+                <image src="{{item.choose==0?'../../../images/noxuan1.png':'../../../images/noxuan2.png'}}" ></image>
+            </view>
+            <view class="goods-name">
+                <text>商品名称：{{item.name}}</text>
+            </view>
+            <view class="goods-info">所属分类：{{item.className}}</view>
+            <view class="goods-info">商品型号：{{item.model}}</view>
+            <view class="goods-info">商品品牌：{{item.brand}}</view>
+            <view class="price">
+                <view class="goods-info">成本价：￥{{item.cost}}</view>
+                <view class="goods-info">商品售价：￥{{item.price}}</view>
+                <view class="goods-info">促销价：￥{{item.discount}}</view>
+            </view>
+        </view>
+        <view class="mainBottom_loadMore" hidden="{{load1}}">{{two1}}</view>
+    </scroll-view>
+    <view class="affirm" bindtap="affirm">确认</view>
+</view>

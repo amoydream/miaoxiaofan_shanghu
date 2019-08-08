@@ -1,0 +1,26 @@
+<view class="container">
+    <!--<view class="bankCard" bindtap="addBankCard" wx:for="{{bank}}" wx:key="index"></view>-->
+    <view class="addInfo" bindtap="bankHide">
+        <view class="number">
+            银行卡号：<input type="text" bindinput="bankAccount" placeholder="111" value="{{bankAccount}}" />
+        </view>
+        <view class="number">
+            银行名称：<input type="text" catchtap="bankShow" placeholder="111" value="{{bankName}}" disabled/>
+            <scroll-view scroll-y="true" class="pScroll" hidden="{{bShow}}">
+                <view wx:for="{{banks}}" bindtap="chooseBank" wx:key="index" data-text="{{item}}">{{item}}</view>
+            </scroll-view>
+        </view>
+        <view class="number">
+            开卡姓名：<input type="text" bindinput="accountName" placeholder="111" value="{{accountName}}" />
+        </view>
+        <view class="number">
+            支行名称：<input type="text" bindinput="subbranch" placeholder="" value="{{subbranch}}" />
+        </view>
+        <view class="number">
+            开卡地址：<input type="text" bindinput="bankAddress" placeholder="" value="{{bankAddress}}"/>
+        </view>
+        <view class="btn">
+            <button class="confirm" bindtap="addBankCard">确认修改</button>
+        </view>
+    </view>
+</view>
